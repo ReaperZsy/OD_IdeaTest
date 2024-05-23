@@ -1,6 +1,5 @@
 import java.util.HashMap;
 import java.util.Scanner;
-import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * ClassName: HJ_002
@@ -20,15 +19,24 @@ public class HJ_002 {
             for (int i = 0; i < s.length(); i++) {
                 if (dir.containsKey(s.charAt(i))) {
                     dir.put(s.charAt(i), dir.get(s.charAt(i)) + 1);
+                    System.out.println(s.charAt(i));
+                    System.out.println(dir.get(s.charAt(i)));
                 }else {
                     dir.put(s.charAt(i), 1);
                 }
             }
-            if(dir.containsKey(sc.nextLine().toLowerCase().charAt(0))) {
-                System.out.println(dir.get(sc.nextLine().toLowerCase().charAt(0)));
+            char c1 = sc.nextLine().toLowerCase().charAt(0);
+            if(dir.containsKey(c1)) {
+                System.out.println(dir.get(c1));
             }else {
                 System.out.println("0");
             }
         }
     }
 }
+
+
+/*简单的方法
+* replaceAll()方法
+* 原始字符串长度减去替换之后的差即为出现次数
+* */
